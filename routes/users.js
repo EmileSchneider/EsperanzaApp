@@ -11,7 +11,7 @@ MongoClient.connect('mongodb://emile:K4rlM4rx@ds121461.mlab.com:21461/esperanza'
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  let x = db.collection("Arbeiter").find().toArray(function(err, results) {
+  db.collection("Arbeiter").find().toArray(function(err, results) {
     res.json(results)
   })
 });
@@ -23,4 +23,5 @@ router.post('/', function(req, res) {
     res.redirect('/')
   })
 })
+
 module.exports = router;
